@@ -14,7 +14,17 @@ int main()
         i++;
     }
 
+    int num2;
+    cout<<"num2=";
+    cin>>num2;
+
+    int answer2 = 1;
+    for(i=1; i<=num2; i++){ //reset i value
+        answer2 *= i;
+    }
+
     cout<<num1<<"!="<<answer1<<endl;
+    cout<<num2<<"!="<<answer2<<endl;
 
     return 0;
 }
