@@ -22,7 +22,7 @@ int main()
     int remainder = a % b;
     cout<<"a%b="<<remainder<<endl;
     float quotient_float = (float)a / b;    //numerator should be float type
-    cout<<"a/b(float)="<<quotient_float<<endl;
+    cout<<"a/b="<<quotient_float<<"(float)"<<endl;
 
     cout<<"=====float type====="<<endl;
     float c, d;
@@ -31,11 +31,11 @@ int main()
     cout<<"d=";
     cin>>d;
 
-    cout<<"c+d="<<c+d<<endl;
-    cout<<"c-d="<<c-d<<endl;
-    cout<<"c*d="<<c*d<<endl;
-    cout<<"c/d="<<c/d<<endl;
-    cout<<"c%d="<<(int)c%(int)d<<endl;  //remainder should be two int variables
+    cout<<"c+d="<<c + d<<endl;
+    cout<<"c-d="<<c - d<<endl;
+    cout<<"c*d="<<c * d<<endl;
+    cout<<"c/d="<<c / d<<endl;
+    cout<<"c%d="<<(int)c % (int)d<<endl;  //remainder should be two int variables
 
     return 0;
 }
