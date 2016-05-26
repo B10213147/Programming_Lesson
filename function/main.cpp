@@ -26,40 +26,35 @@ int main()
 
 void max_Sort(int a, int b, int c){
     int out = max3(a, b, c);
+    cout<<out<<" ";
 
     if(out == a){
-        cout<<out<<" ";
         out = max2(b, c);
+        cout<<out<<" ";
         if(out == b){
-            cout<<out<<" ";
             cout<<c<<endl;
         }
-        else{   //out = c
-            cout<<out<<" ";
+        else{   //out == c
             cout<<b<<endl;
         }
     }
     else if(out == b){
-       cout<<out<<" ";
         out = max2(a, c);
+        cout<<out<<" ";
         if(out == a){
-            cout<<out<<" ";
             cout<<c<<endl;
         }
-        else{   //out = c
-            cout<<out<<" ";
+        else{   //out == c
             cout<<a<<endl;
         }
     }
-    else{   //out = c
-        cout<<out<<" ";
+    else{   //out == c
         out = max2(b, a);
+        cout<<out<<" ";
         if(out == b){
-            cout<<out<<" ";
             cout<<a<<endl;
         }
-        else{   //out = a
-            cout<<out<<" ";
+        else{   //out == a
             cout<<b<<endl;
         }
     }
