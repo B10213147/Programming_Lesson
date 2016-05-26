@@ -4,7 +4,7 @@
 /* Functions Declaration ---------*/
 int max2(int a, int b);
 int max3(int a, int b, int c);
-void max_Sort(int a, int b, int c);
+void max_Sort(void);
 int min2(int a, int b);
 int min3(int a, int b, int c);
 void min_Sort(int a, int b, int c);
@@ -22,46 +22,52 @@ int main()
     cout<<"z="; cin>>z;
 
     cout<<"=====Max_Sort====="<<endl;
-    max_Sort(x, y, z);
+    max_Sort();
+
+    int i, j, k;
+    cout<<"i="; cin>>i;
+    cout<<"j="; cin>>j;
+    cout<<"k="; cin>>k;
 
     cout<<"=====Min_Sort====="<<endl;
     min_Sort(x, y, z);
+    min_Sort(i, j, k);
 
     return 0;
 }
 
-void max_Sort(int a, int b, int c){
-    int out = max3(a, b, c);
+void max_Sort(void){
+    int out = max3(x, y, z);
     cout<<out<<" ";
 
-    if(out == a){
-        out = max2(b, c);
+    if(out == x){
+        out = max2(y, z);
         cout<<out<<" ";
-        if(out == b){
-            cout<<c<<endl;
+        if(out == y){
+            cout<<z<<endl;
         }
-        else{   //out == c
-            cout<<b<<endl;
+        else{   //out == z
+            cout<<y<<endl;
         }
     }
-    else if(out == b){
-        out = max2(a, c);
+    else if(out == y){
+        out = max2(x, z);
         cout<<out<<" ";
-        if(out == a){
-            cout<<c<<endl;
+        if(out == x){
+            cout<<z<<endl;
         }
-        else{   //out == c
-            cout<<a<<endl;
+        else{   //out == z
+            cout<<x<<endl;
         }
     }
-    else{   //out == c
-        out = max2(b, a);
+    else{   //out == z
+        out = max2(x, y);
         cout<<out<<" ";
-        if(out == b){
-            cout<<a<<endl;
+        if(out == y){
+            cout<<x<<endl;
         }
-        else{   //out == a
-            cout<<b<<endl;
+        else{   //out == x
+            cout<<y<<endl;
         }
     }
 }
