@@ -42,6 +42,45 @@ int main()
     cout<<"compare="<<compare<<endl;
     cout<<"swap="<<swap_n<<endl;
 
+    //create sequence numbers
+    for(i=1; i<size/2; i++){
+        nums[i] = nums[i-1] + 1;
+    }
+    for(i=size/2; i<size; i++){
+        nums[i] = nums[i-1] - 1;
+    }
+    compare = 0;
+    swap_n = 0;
+
+    cout<<"=====Before sort====="<<endl;
+    for(i=0; i<size; i++){
+        cout<<nums[i]<<" ";
+    }
+    cout<<endl;
+
+    int max_num;
+    //selection sort
+    for(i=size-1; i>0; i--){
+        max_num = i;
+        for(j=i-1; j>=0; j--){
+            compare++;
+            if(nums[max_num] < nums[j]){
+                max_num = j;
+            }
+        }
+        if(max_num != i){
+            swap_nums(max_num, i);
+        }
+    }
+
+    cout<<"=====After sort====="<<endl;
+    for(i=0; i<size; i++){
+        cout<<nums[i]<<" ";
+    }
+    cout<<endl;
+    cout<<"compare="<<compare<<endl;
+    cout<<"swap="<<swap_n<<endl;
+
     return 0;
 }
 
