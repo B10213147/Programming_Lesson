@@ -58,18 +58,18 @@ int main()
     }
     cout<<endl;
 
-    int max_num;
+    int min_loc;
     //selection sort
-    for(i=size-1; i>0; i--){
-        max_num = i;
-        for(j=i-1; j>=0; j--){
+    for(i=0; i<size-1; i++){
+        min_loc = i;
+        for(j=i+1; j<=size-1; j++){
             compare++;
-            if(nums[max_num] < nums[j]){
-                max_num = j;
+            if(nums[min_loc] > nums[j]){
+                min_loc = j;
             }
         }
-        if(max_num != i){
-            swap_nums(max_num, i);
+        if(min_loc != i){
+            swap_nums(min_loc, i);
         }
     }
 
