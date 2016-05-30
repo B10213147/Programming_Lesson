@@ -2,20 +2,21 @@
 #include <cmath>
 
 struct point{
-    float x;
-    float y;
-    float dis_to_00;
+    int x;
+    int y;
 };
 
 struct package{
     struct point a;
     struct point b;
     float distance;
-    float slop;
+    float slope;
 };
 
+struct point p_Input(void);
 float p_Distance(struct point a, struct point b);
-float p_Slop(struct point a, struct point b);
+float p_Slope(struct point a, struct point b);
+void show_Package(struct package info);
 
 using namespace std;
 
@@ -25,53 +26,74 @@ int main()
     struct point p1;
 
     cout<<"=====Point 1====="<<endl;
-    cout<<"x=";
-    cin>>p1.x;
-    cout<<"y=";
-    cin>>p1.y;
-
-    p1.dis_to_00 = p_Distance(p1, p0);
-    cout<<p1.dis_to_00<<endl;
+    p1 = p_Input();
+    float slope = p_Slope(p0, p1);
+    cout<<"slope="<<slope<<endl;
 
     struct point p2;
     cout<<"=====Point 2====="<<endl;
-    cout<<"x=";
-    cin>>p2.x;
-    cout<<"y=";
-    cin>>p2.y;
-    p2.dis_to_00 = p_Distance(p2, p0);
-    cout<<p2.dis_to_00<<endl;
+    p2 = p_Input();
+
+    struct point p3;
+    cout<<"=====Point 3====="<<endl;
+    p3 = p_Input();
 
     struct package info1;
-    cout<<"=====Information====="<<endl;
     info1.a = p1;
     info1.b = p2;
-    info1.distance = p_Distance(info1.a, info1.b);
-    info1.slop = p_Slop(info1.a, info1.b);
-    cout<<"a=("<<info1.a.x<<","<<info1.a.y<<")"<<endl;
-    cout<<"b=("<<info1.b.x<<","<<info1.b.y<<")"<<endl;
-    cout<<"Distance="<<info1.distance<<endl;
-    cout<<"Slop="<<info1.slop<<endl;
+
+    struct package info2;
+    info2.a = p2;
+    info2.b = p3;
+
+    struct package info3;
+    info3.a = p3;
+    info3.b = p1;
+
+    show_Package(info1);
+    show_Package(info2);
+    show_Package(info3);
+
     return 0;
+}
+
+struct point p_Input(void){
+    struct point p;
+
+    cout<<"x=";
+    cin>>p.x;
+    cout<<"y=";
+    cin>>p.y;
+
+    return p;
 }
 
 float p_Distance(struct point a, struct point b){
     float dx, dy, dis;
 
-    dx = a.x - b.x;
-    dy = a.y - b.y;
-
+    dx = b.x - a.x;
+    dy = b.y - a.y;
     dis = sqrt(pow(dx, 2)+pow(dy, 2));
 
     return dis;
 }
 
-float p_Slop(struct point a, struct point b){
-    float dx, dy, slop;
+float p_Slope(struct point a, struct point b){
+    float dx, dy, slope;
 
-    dx = a.x - b.x;
-    dy = a.y - b.y;
-    slop = dy / dx;
+    dx = b.x - a.x;
+    dy = b.y - a.y;
+    slope = dy / dx;
 
-    return slop;
+    return slope;
+}
+
+void show_Package(struct package info){
+    cout<<"=====Information====="<<endl;
+    info.distance = p_Distance(info.a, info.b);
+    info.slope = p_Slope(info.a, info.b);
+    cout<<"a=("<<info.a.x<<","<<info.a.y<<")"<<endl;
+    cout<<"b=("<<info.b.x<<","<<info.b.y<<")"<<endl;
+    cout<<"Distance="<<info.distance<<endl;
+    cout<<"slope="<<info.slope<<endl;
 }
