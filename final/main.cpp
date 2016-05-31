@@ -6,23 +6,18 @@
 
 using namespace std;
 
-
 int main()
 {
     unsigned int i;
     cout<<"=====Before sort====="<<endl;
-    for(i=0; i<ARRAY_LENGTH(classA); i++){
-        classA[i].BMI = BMI_Calculate(classA[i]);
-        cout<<classA[i].name<<" = "<<classA[i].BMI<<endl;
+    for(i=0; i<ARRAY_LENGTH(MLB); i++){
+        MLB[i].ERA = ERA_Calculate(MLB[i]);
+        cout<<MLB[i].name<<" = "<<MLB[i].ERA<<endl;
     }
-    body_Sort(classA, ARRAY_LENGTH(classA));
+    pitcher_Sort(MLB, ARRAY_LENGTH(MLB));
     cout<<"=====After sort====="<<endl;
-    for(i=0; i<ARRAY_LENGTH(classA); i++){
-        cout<<classA[i].name<<" = "<<classA[i].BMI<<endl;
+    for(i=0; i<ARRAY_LENGTH(MLB); i++){
+        cout<<MLB[i].name<<" = "<<MLB[i].ERA<<endl;
     }
     return 0;
 }
-
-
-
-

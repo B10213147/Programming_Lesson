@@ -16,6 +16,10 @@ struct pitcher{
     float ERA;
 };
 
-extern struct pitcher MLB[];
+extern struct pitcher MLB[6];
+
+extern float ERA_Calculate(struct pitcher a);
+extern void pitcher_Sort(struct pitcher *a, unsigned int sizes);
+extern void pitcher_Swap(struct pitcher *a, struct pitcher *b);
 
 #endif // PITCHER_H_INCLUDED
