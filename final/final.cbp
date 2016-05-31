@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="array_length.h" />
 		<Unit filename="body.cpp" />
 		<Unit filename="body.hpp" />
 		<Unit filename="grade.cpp" />

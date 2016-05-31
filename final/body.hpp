@@ -12,6 +12,10 @@ struct body{
     float BMI;
 };
 
-extern struct body classA[];
+extern struct body classA[10];
+
+extern float BMI_Calculate(struct body a);
+extern void body_Sort(struct body *a, unsigned int sizes);
+extern void body_Swap(struct body *a, struct body *b);
 
 #endif // BODY_H_INCLUDED
