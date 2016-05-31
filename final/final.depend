@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1464677645 source:i:\final\main.cpp
+	<iostream>
+	"grade.hpp"
+	"body.hpp"
+	"pitcher.hpp"
+
+1464648680 source:i:\final\grade.cpp
+	"grade.h"
+
+1464648878 i:\final\grade.h
+	<iostream>
+
+1464675243 i:\final\body.h
+	<iostream>
+
+1464648901 i:\final\pitcher.h
+	<iostream>
+
+1464677918 i:\final\grade.hpp
+	<iostream>
+
+1464677623 i:\final\body.hpp
+	<iostream>
+
+1464677587 i:\final\pitcher.hpp
+	<iostream>
+
+1464677623 source:i:\final\body.cpp
+	"body.hpp"
+
+1464677558 source:i:\final\pitcher.cpp
+	"pitcher.hpp"
+
